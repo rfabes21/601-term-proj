@@ -1,0 +1,54 @@
+/* line 8, ../scss/print-styles.scss */
+html {
+  background: none;
+}
+
+/* line 12, ../scss/print-styles.scss */
+body {
+  background: none;
+}
+
+/* line 16, ../scss/print-styles.scss */
+.heading {
+  font-family: "Lato", "sans-serif";
+  text-align: center;
+}
+
+/* line 21, ../scss/print-styles.scss */
+.title::before {
+  display: none;
+}
+
+/* line 25, ../scss/print-styles.scss */
+.title::after {
+  display: none;
+}
+
+/* line 29, ../scss/print-styles.scss */
+.img-wrapper {
+  display: none;
+}
+
+/* line 33, ../scss/print-styles.scss */
+a::after {
+  background-color: #ccc;
+}
+
+/* line 37, ../scss/print-styles.scss */
+section {
+  background-color: none;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid;
+}
+/* line 43, ../scss/print-styles.scss */
+section:last-child {
+  border-bottom: 0;
+}
+
+/* line 48, ../scss/print-styles.scss */
+.body-copy {
+  background-color: none;
+  border: 0;
+  border-radius: 0;
+}
