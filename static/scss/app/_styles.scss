@@ -10,6 +10,7 @@
 
 //colors
 $white-20: rgba(255, 255, 255, 0.2);
+$white-80: rgba(255, 255, 255, 0.8);
 $white: #fff;
 $vivid-tangerine: #ffa17f;
 $tangaroa: #00223e;
@@ -103,6 +104,10 @@ a::after {
 
 header {
     margin-bottom: 20px;
+
+    h2.heading {
+        margin: 25px 0 50px;
+    }
 }
 
 .heading {
@@ -136,6 +141,38 @@ header {
 .navbar {
     text-align: center;
     font-size: 20px;
+    width: 200px;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: -200px;
+    background-color: $white-80;
+    @include transition (all .5s $ease-out-expo);
+
+    &.menu-open {
+        left: 0;
+
+        //burger menu animation
+        .burger-menu {
+
+            .menu {
+
+                span {
+                    background-color: rgba(0,0,0,0);
+
+                    &:before {
+                        margin-top: 0;
+                        @include transform(rotate(45deg));
+                    }
+
+                    &:after {
+                        margin-top: 0;
+                        @include transform(rotate(-45deg));
+                    }
+                }
+            }
+        }
+    }
 }
 
 .navbar-list {
@@ -144,8 +181,63 @@ header {
     margin: 0;
 
     .list-item {
-        display: inline-block;
+        // display: inline-block;
         margin: 15px;
+    }
+}
+
+.burger-menu {
+    background-color: $tangaroa;
+    position: absolute;
+    width: 20%;
+    height: rem(48);
+    left: 100%;
+    top: rem(32);
+    border-radius: 0 rem(3) rem(3) 0;
+    z-index: 3;
+    box-shadow: 8px 0 100px #000;
+    -moz-box-shadow: 8px 0 10px #000;
+    -webkit-box-shadow: 8px 0 10px #000;
+
+    .menu {
+        position: relative;
+        display:  inline-block;
+        width: 100%;
+        height: 100%;
+
+        span {
+            margin: 0 auto;
+            position: relative;
+            top: 45%;
+            width: rem(30);
+            height: rem(4);
+            background-color: #fff;
+            display: block;
+            border-radius: rem(3);
+            @include transition-duration(0s);
+
+
+            &:before,
+            &:after {
+                position: absolute;
+                content: '';
+                width: rem(30);
+                height: rem(4);
+                background-color: #fff;
+                display: block;
+                border-radius: rem(3);
+                @include transition-property(margin, transform);
+                @include transition-duration(0.5s);
+            }
+
+            &:before {
+                margin-top: rem(-8);
+            }
+
+            &:after {
+                margin-top: rem(8);
+            }
+        }
     }
 }
 
@@ -244,6 +336,11 @@ footer {
 }
 
 @media (min-width: 640px) {
+
+    .visible-xs {
+        display: none;
+    }
+
     .body-copy {
         padding: 10px;
         background-color: transparent;
