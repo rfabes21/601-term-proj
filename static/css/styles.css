@@ -347,19 +347,20 @@ footer {
   /* line 354, ../scss/app/_styles.scss */
   .burger-menu {
     width: 125px;
+    top: 16px;
   }
-  /* line 357, ../scss/app/_styles.scss */
+  /* line 358, ../scss/app/_styles.scss */
   .burger-menu p {
     margin-right: 12px;
     position: relative;
     top: -17px;
   }
-  /* line 363, ../scss/app/_styles.scss */
+  /* line 364, ../scss/app/_styles.scss */
   .burger-menu .menu {
     width: auto;
   }
 
-  /* line 368, ../scss/app/_styles.scss */
+  /* line 369, ../scss/app/_styles.scss */
   .body-copy {
     padding: 10px;
     background-color: transparent;
@@ -367,19 +368,19 @@ footer {
     border-radius: 0;
   }
 
-  /* line 376, ../scss/app/_styles.scss */
+  /* line 377, ../scss/app/_styles.scss */
   aside {
     width: 25%;
     float: left;
   }
-  /* line 380, ../scss/app/_styles.scss */
+  /* line 381, ../scss/app/_styles.scss */
   aside + section {
     width: 70%;
     display: inline-block;
     margin-left: 5%;
   }
 
-  /* line 387, ../scss/app/_styles.scss */
+  /* line 388, ../scss/app/_styles.scss */
   section {
     clear: both;
     padding: 15px;
@@ -387,45 +388,45 @@ footer {
     border: 2px solid #fff;
     border-radius: 5px;
   }
-  /* line 395, ../scss/app/_styles.scss */
+  /* line 396, ../scss/app/_styles.scss */
   section .img-wrapper {
     max-width: 320px;
     margin: 10px 10px 0;
   }
-  /* line 399, ../scss/app/_styles.scss */
+  /* line 400, ../scss/app/_styles.scss */
   section .img-wrapper.left {
     float: left;
   }
-  /* line 403, ../scss/app/_styles.scss */
+  /* line 404, ../scss/app/_styles.scss */
   section .img-wrapper.right {
     float: right;
   }
 
-  /* line 409, ../scss/app/_styles.scss */
+  /* line 410, ../scss/app/_styles.scss */
   .gallery-map {
     display: block;
   }
 
-  /* line 413, ../scss/app/_styles.scss */
+  /* line 414, ../scss/app/_styles.scss */
   .gallery-grid-item {
     width: 45%;
     margin: 2.5%;
     float: left;
   }
 }
-/* line 420, ../scss/app/_styles.scss */
+/* line 421, ../scss/app/_styles.scss */
 tbody tr {
   transition: background 0.3s ease;
   -webkit-transition: background 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   -moz-transition: background 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: background 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-/* line 424, ../scss/app/_styles.scss */
+/* line 425, ../scss/app/_styles.scss */
 tbody tr:hover {
   background: rgba(0, 34, 62, 0.5);
 }
 
-/* line 429, ../scss/app/_styles.scss */
+/* line 430, ../scss/app/_styles.scss */
 .gallery-grid-item .img-wrapper {
   margin: 0 auto;
 }
