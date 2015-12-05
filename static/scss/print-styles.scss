@@ -1,0 +1,52 @@
+//colors
+$color-celeste: #ccc;
+
+//fonts
+$font-0: "Lato";
+$font-1: "sans-serif";
+
+html {
+    background: none;
+}
+
+body {
+    background: none;
+}
+
+.heading {
+    font-family: $font-0, $font-1;
+    text-align: center;
+}
+
+.title::before {
+    display: none;
+}
+
+.title::after {
+    display: none;
+}
+
+.img-wrapper {
+    display: none;
+}
+
+a::after {
+    background-color: $color-celeste-approx;
+}
+
+section {
+    background-color: none;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid;
+
+    &:last-child {
+        border-bottom: 0;
+    }
+}
+
+.body-copy {
+    background-color: none;
+    border: 0;
+    border-radius: 0;
+}
