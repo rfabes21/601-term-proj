@@ -1,7 +1,7 @@
 /* line 30, ../scss/app/_styles.scss */
 a:hover::after, .list-item.active a::after {
   background: #00223e;
-  width: 120%;
+  width: 119%;
   margin-left: -10%;
 }
 
