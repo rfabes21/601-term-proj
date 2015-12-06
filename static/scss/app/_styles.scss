@@ -6,19 +6,25 @@
 
 // note: Bourbon "deprecation" warnings are expected and should
 // disappear after the next major release
-@import 'vendor/bourbon/bourbon';
+@import "vendor/bourbon/bourbon";
 
 //colors
-$white-20: rgba(255, 255, 255, 0.2);
-$white-80: rgba(255, 255, 255, 0.8);
+$white-20: rgba(255, 255, 255, .2);
+$white-80: rgba(255, 255, 255, .8);
 $white: #fff;
 $vivid-tangerine: #ffa17f;
 $tangaroa: #00223e;
 $black: #000;
-$vivid-tangerine-50: rgba(255, 161, 127, 0.5);
+$vivid-tangerine-50: rgba(255, 161, 127, .5);
 $cape-cod: #364043;
-$tangaroa-50: rgba(0, 34, 62, 0.5);
+$tangaroa-50: rgba(0, 34, 62, .5);
 $color-celeste: #ccc;
+$color-sunset-orange: #fc4d3c;
+$color-fair-pink: #ffeeec;
+$color-tundora: #47433f;
+$color-gallery: #f1efed;
+$color-ship-cove: #6b94b5;
+$color-rangoon-green: #1c1c1c;
 
 //fonts
 $font-0: "Merriweather";
@@ -37,6 +43,12 @@ $font-3: "sans-serif";
     content: '';
     position: absolute;
     height: 3px;
+}
+
+%extend-3 {
+    opacity: 1;
+    top: -30px;
+    color: $white;
 }
 
 * {
@@ -81,8 +93,9 @@ a::after {
     position: absolute;
     bottom: 0;
     background-color: $vivid-tangerine;
+
     // transition: all .3s ease;
-    @include transition(all .3s $ease-out-circ);
+    @include transition(all 0.3s $ease-out-circ);
 }
 
 .list-item {
@@ -149,28 +162,30 @@ header {
     position: fixed;
     height: 100%;
     top: 0;
+    z-index: 2;
     left: -200px;
     background-color: $white-80;
-    @include transition (all .5s $ease-out-expo);
+
+    @include transition(all 0.5s $ease-out-expo);
 
     &.menu-open {
         left: 0;
 
         //burger menu animation
         .burger-menu {
-
             .menu {
-
                 span {
-                    background-color: rgba(0,0,0,0);
+                    background-color: rgba(0, 0, 0, 0);
 
                     &:before {
                         margin-top: 0;
+
                         @include transform(rotate(45deg));
                     }
 
                     &:after {
                         margin-top: 0;
+
                         @include transform(rotate(-45deg));
                     }
                 }
@@ -211,7 +226,7 @@ header {
 
     .menu {
         position: relative;
-        display:  inline-block;
+        display: inline-block;
         width: 100%;
         height: 100%;
 
@@ -224,8 +239,8 @@ header {
             background-color: #fff;
             display: block;
             border-radius: rem(3);
-            @include transition-duration(0s);
 
+            @include transition-duration(0s);
 
             &:before,
             &:after {
@@ -236,7 +251,9 @@ header {
                 background-color: #fff;
                 display: block;
                 border-radius: rem(3);
+
                 @include transition-property(margin, transform);
+
                 @include transition-duration(0.5s);
             }
 
@@ -297,7 +314,6 @@ section {
     background-color: $white-20;
     border: 2px solid $white;
     border-radius: 5px;
-
 }
 
 table {
@@ -345,8 +361,163 @@ footer {
     }
 }
 
-@media (min-width: 640px) {
+tbody tr {
+    @include transition(background 0.3s $ease-out-circ);
 
+    &:hover {
+        background: $tangaroa-50;
+    }
+}
+
+.gallery-grid-item {
+
+    .img-wrapper {
+        margin: 0 auto;
+    }
+}
+
+
+//  FORM STYLES
+form {
+    padding-bottom: 20px;
+}
+
+.form-module {
+    padding: 40px 20px;
+    border-radius: 3px;
+    text-align: center;
+    margin: 0 auto;
+    border: 1px solid $color-celeste;
+    background-color: $white-20;
+}
+
+.form-input {
+    position: relative;
+    margin-bottom: 40px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    textarea {
+        border: 1px solid $color-celeste;
+        resize: vertical;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    input,
+    textarea {
+        width: 98%;
+        font-size: 18px;
+        outline: none;
+        border: 1px solid $color-celeste;
+        border-radius: 3px;
+        padding: 10px 0 10px 10px;
+
+        &:focus {
+            &:-moz-placeholder {
+                color: $color-gallery;
+            }
+
+            &:-ms-input-placeholder {
+                color: $color-gallery;
+            }
+
+            + .form-label {
+                @extend %extend-3;
+            }
+        }
+
+        &.error {
+            border: 1px solid $color-sunset-orange;
+            background-color: $color-fair-pink;
+
+            + .form-label {
+                @extend %extend-3;
+
+                color: $color-sunset-orange;
+            }
+        }
+
+        &:focus::-webkit-input-placeholder {
+            color: $color-gallery;
+        }
+
+        &:-moz-placeholder {
+            color: $color-tundora;
+        }
+
+        &:focus::-moz-placeholder {
+            color: $color-gallery;
+        }
+
+        &:-ms-input-placeholder {
+            color: $color-tundora;
+        }
+
+        &.valid + .form-label {
+            @extend %extend-3;
+        }
+    }
+
+    input::-webkit-input-placeholder {
+        color: $color-tundora;
+    }
+
+    input::-moz-placeholder {
+        color: $color-tundora;
+    }
+}
+
+.form-label {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    opacity: 0;
+    z-index: -1;
+    width: 100%;
+    height: 30px;
+
+    @include transition(all 0.3s $ease-out-circ);
+
+    text-align: left;
+
+    label {
+        margin: 0;
+        position: absolute;
+        bottom: 3px;
+        font-size: 14px;
+    }
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 30px;
+
+    input {
+        background-color: $white-20;
+        border: 1px solid $color-celeste;
+        outline: none;
+        padding: 15px;
+        border-radius: 3px;
+
+        @include transition(background-color 0.3s $ease-out-circ);
+
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-rangoon-green;
+            color: $white;
+        }
+    }
+}
+
+@media (min-width: 640px) {
     .hidden-xs {
         display: inline-block !important;
     }
@@ -371,7 +542,6 @@ footer {
         background-color: transparent;
         border: 0;
         border-radius: 0;
-
     }
 
     aside {
@@ -391,7 +561,6 @@ footer {
         background-color: $white-20;
         border: 2px solid $white;
         border-radius: 5px;
-
 
         .img-wrapper {
             max-width: 320px;
@@ -416,17 +585,16 @@ footer {
         margin: 2.5%;
         float: left;
     }
-}
 
-tbody tr {
-    transition: background 0.3s ease;
-    @include transition(background .3s $ease-out-circ);
-
-    &:hover {
-        background: $tangaroa-50;
+    .form-module {
+        width: 80%;
     }
-}
 
-.gallery-grid-item .img-wrapper {
-    margin: 0 auto;
+    .form-input {
+
+        &.name {
+            width: 49%;
+            display: inline-block;
+        }
+    }
 }
