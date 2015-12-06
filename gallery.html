@@ -3,14 +3,19 @@
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="keywords" content="Ryan Fabian, Motorcycle Racing, Biography">
     <meta name="description" content="A short biography of Ryan Fabian, and his favorite pastime, racing motorcycles.">
     <title>Ryan Fabian | Gallery</title>
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="static/img/favicon.ico">
     <!-- This will error on W3C validation becuase of the pipe, but is valid -->
     <link href='https://fonts.googleapis.com/css?family=Lato|Merriweather:300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/print-styles.css" media="print">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/print-styles.css" media="print">
+    <script src="static/js/vendor/jquery/jquery.js"></script>
+    <script src="static/js/main.js"></script>
+
 </head>
 
 <body>
@@ -18,10 +23,16 @@
         <header>
             <h1 class="title heading"><span class="box"></span>Ryan Fabian</h1>
             <nav class="navbar heading">
+                <div class="burger-menu visible-xs">
+                    <p class="hidden-xs">Menu</p>
+                    <div class="menu"><span></span></div>
+                </div>
                 <ul class="navbar-list">
                     <li class="list-item"><a href="index.html">Home</a></li>
                     <li class="list-item"><a href="about.html">About</a></li>
                     <li class="list-item active"><a href="gallery.html">Gallery</a></li>
+                    <li class="list-item"><a href="professional.html">Professional</a></li>
+                    <li class="list-item"><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
             <h2 class="heading">Gallery</h2>
@@ -32,16 +43,16 @@
                 <h2 class="heading">Image Section</h2>
                 <ul class="gallery-grid">
                     <li class="gallery-grid-item">
-                        <div class="img-wrapper"><img src="img/unloading-bikes.jpg" alt="unloading bikes"></div>
+                        <div class="img-wrapper"><img src="static/img/unloading-bikes.jpg" alt="unloading bikes"></div>
                     </li>
                     <li class="gallery-grid-item">
-                        <div class="img-wrapper"><img src="img/pit-ready.jpg" alt="pit ready"></div>
+                        <div class="img-wrapper"><img src="static/img/pit-ready.jpg" alt="pit ready"></div>
                     </li>
                     <li class="gallery-grid-item">
-                        <div class="img-wrapper"><img src="img/closeup.jpg" alt="closeup"></div>
+                        <div class="img-wrapper"><img src="static/img/closeup.jpg" alt="closeup"></div>
                     </li>
                     <li class="gallery-grid-item">
-                        <div class="img-wrapper"><img src="img/motion-shot.jpg" alt="motion shot"></div>
+                        <div class="img-wrapper"><img src="static/img/motion-shot.jpg" alt="motion shot"></div>
                     </li>
                 </ul>
             </section>
