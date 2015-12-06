@@ -10,7 +10,7 @@ var checkEmailAddress = function(email){
 
 var checkValidation = function(e){
     e.preventDefault();
-    e.stopImmediatePropogation();
+    e.stopPropagation();
     var firstName = $('#first-name-input');
     var firstNameVal = $('#first-name-input').val();
     var firstNameMsg = $('#firstName-validation-msg');
