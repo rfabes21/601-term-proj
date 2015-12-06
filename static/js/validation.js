@@ -8,7 +8,9 @@ var checkEmailAddress = function(email){
     return pattern.test(email);
 }
 
-var checkValidation = function(){
+var checkValidation = function(e){
+    e.preventDefault();
+    e.stopImmediatePropogation();
     var firstName = $('#first-name-input');
     var firstNameVal = $('#first-name-input').val();
     var firstNameMsg = $('#firstName-validation-msg');
@@ -34,6 +36,7 @@ var checkValidation = function(){
         isValid = false;
     } else {
         // clearing the error state
+        isValid = true;
         firstName.removeClass('error').text('');
     }
 
@@ -47,6 +50,7 @@ var checkValidation = function(){
         isValid = false;
     } else {
         // clearing the error state
+        isValid = true;
         lastName.removeClass('error').text('');
     }
 
@@ -60,11 +64,12 @@ var checkValidation = function(){
         isValid = false;
     } else {
         // clearing the error state
+        isValid = true;
         email.removeClass('error').text('');
     }
 
     if (isValid) {
-        $('validation-form').submit();
+        $('#email-form').submit();
     }
 }
 
@@ -75,8 +80,8 @@ var resetFormMsgs = function(){
 }
 
 window.onload = function(){
-    $('#submit-btn').click(function(){
-        checkValidation();
+    $('#submit-btn').click(function(e){
+        checkValidation(e);
     });
 
     $('#reset-btn').click(function(){
